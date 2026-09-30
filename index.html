@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="A responsive weather application">
+
+    <title>Lordscope's Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>Lordscope's Weather App</h1>
+                <p>Check the weather anywhere in the world from your comfort zone</p>
+            </div>
+        </header>
+
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <form id="search-form" class="search-form">
+
+                <label for="city-input" class="sr-only">
+                    Enter city name
+                </label>
+
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Enter city e.g. Lagos"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" id="search-button">
+                    Search
+                </button>
+
+            </form>
+
+            <p id="error-message" class="error-message"></p>
+
+        </section>
+
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Loading weather...</p>
+        </div>
+
+
+        <!-- Weather Content -->
+        <section id="weather-content" class="weather-content hidden">
+
+            <!-- Current Weather -->
+            <article class="current-weather card">
+
+                <div class="location">
+
+                    <div>
+                        <h2 id="city-name">Lagos</h2>
+                        <p id="country-name">Nigeria</p>
+                    </div>
+
+                    <div class="local-time">
+                        <span id="local-date">--</span>
+                        <span id="local-time">--</span>
+                    </div>
+
+                </div>
+
+
+                <div class="current-weather-main">
+
+                    <div class="weather-icon">
+                        <span id="current-icon">☀️</span>
+                    </div>
+
+                    <div class="temperature">
+                        <span id="current-temperature">--</span>
+                        <span class="degree">°C</span>
+                    </div>
+
+                    <div class="condition">
+                        <h3 id="weather-condition">
+                            Loading...
+                        </h3>
+
+                        <p id="feels-like">
+                            Feels like --°C
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="weather-details">
+
+                    <div class="detail">
+                        <span class="detail-icon">💨</span>
+
+                        <div>
+                            <span class="detail-label">
+                                Wind Speed
+                            </span>
+
+                            <strong id="wind-speed">
+                                -- km/h
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div class="detail">
+                        <span class="detail-icon">💧</span>
+
+                        <div>
+                            <span class="detail-label">
+                                Humidity
+                            </span>
+
+                            <strong id="humidity">
+                                --%
+                            </strong>
+                        </div>
+                    </div>
+
+
+                    <div class="detail">
+                        <span class="detail-icon">☁️</span>
+
+                        <div>
+                            <span class="detail-label">
+                                Cloud Cover
+                            </span>
+
+                            <strong id="cloud-cover">
+                                --%
+                            </strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 5 Day Forecast -->
+            <section class="forecast-section">
+
+                <div class="section-heading">
+                    <h2>5-Day Forecast</h2>
+                </div>
+
+                <div id="forecast-container"
+                     class="forecast-container">
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- Initial Message -->
+        <section id="welcome-message" class="welcome-message">
+
+            <div class="welcome-icon">
+                🌤️
+            </div>
+
+            <h2>Search for a city</h2>
+
+            <p>
+                Enter a city name above to see the current weather
+                and a 5-day forecast.
+            </p>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <p>
+                Weather data provided by
+                <a href="https://open-meteo.com/"
+                   target="_blank"
+                   rel="noopener">
+                    Open-Meteo
+                </a>
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
